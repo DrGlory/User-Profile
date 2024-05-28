@@ -1,0 +1,20 @@
+<div class="user-profile">
+  <img [src]="user.photo" alt="User Photo">
+  <h2 class="nom"> Nom : {{ user.name }}</h2>
+  <h2> Prénom : {{ user.firstName }}</h2>
+  <p>Two beer or not to beer</p>
+  <div>
+    <label for="quote"></label>
+    <input id="quote" [(ngModel)]="user.quote" placeholder="Two beer or not to beer">
+  </div>
+  <p>{{ user.quote }}</p>
+  <div class="entourage-button">
+    <button (click)="toggleAgeVisibility()">
+    {{ AfficherAge ? 'Masquer Age' : 'Afficher Age' }}
+    </button>
+  </div>
+
+  <p *ngIf="AfficherAge">Age: {{ user.age }}</p>
+</div>
+
+
